@@ -71,4 +71,14 @@ class SiteSettings extends SettingsPage
 
         ];
     }
+
+    protected static function shouldRegisterNavigation(): bool
+    {
+        return auth()->user()->can('view_site_settings');
+    }
+
+    public function mount(): void
+    {
+        abort_unless(auth()->user()->can('view_site_settings'), 403);
+    }    
 }
