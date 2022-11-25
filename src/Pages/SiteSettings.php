@@ -80,6 +80,5 @@ class SiteSettings extends SettingsPage
     public function mount(): void
     {
         abort_unless(auth()->user()->can('view_site_settings'), 403);
-        parent::mount();
     }    
 }
