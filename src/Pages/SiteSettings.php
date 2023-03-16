@@ -74,11 +74,11 @@ class SiteSettings extends SettingsPage
 
     protected static function shouldRegisterNavigation(): bool
     {
-        return auth()->user()->can('view_site_settings');
+        return auth()->user()->can('page_SiteSettings');
     }
 
     public function mount(): void
     {
-        abort_unless(auth()->user()->can('view_site_settings'), 403);
+        abort_unless(auth()->user()->can('page_SiteSettings'), 403);
     }    
 }
